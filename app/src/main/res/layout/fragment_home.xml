@@ -7,6 +7,17 @@
     android:background="@color/theme_color"
     tools:context=".UI.Home.Home_Fragment">
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/homePager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="-32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -45,21 +56,26 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/Projects_Tab"
-            android:layout_width="360dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="28dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.775"
-            app:tabGravity="center"
+            app:layout_constraintVertical_bias="1.0"
+            app:tabGravity="start"
             app:tabIndicator="@drawable/tab"
             app:tabIndicatorColor="@color/theme_color"
             app:tabIndicatorGravity="stretch"
             app:tabMinWidth="80dp"
             app:tabMode="scrollable"
+            app:tabRippleColor="@android:color/transparent"
             app:tabSelectedTextColor="@color/black"
-            app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:tabTextAppearance="@style/TextAppearance.AppCompat.Body1"
             app:tabTextColor="@color/black">
 
             <com.google.android.material.tabs.TabItem
@@ -81,16 +97,5 @@
         </com.google.android.material.tabs.TabLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/homePager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="-32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

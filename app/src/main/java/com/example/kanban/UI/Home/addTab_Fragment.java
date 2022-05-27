@@ -2,20 +2,24 @@ package com.example.kanban.UI.Home;
 
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.kanban.R;
+import com.example.kanban.UI.MainActivity;
+import com.example.kanban.databinding.FragmentAddTabBinding;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link workDone_Fragment#newInstance} factory method to
+ * Use the {@link addTab_Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class workDone_Fragment extends Fragment {
+public class addTab_Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +30,7 @@ public class workDone_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public workDone_Fragment() {
+    public addTab_Fragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +40,11 @@ public class workDone_Fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment sub_HomeFragment.
+     * @return A new instance of fragment addTab_Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static workDone_Fragment newInstance(String param1, String param2) {
-        workDone_Fragment fragment = new workDone_Fragment();
+    public static addTab_Fragment newInstance(String param1, String param2) {
+        addTab_Fragment fragment = new addTab_Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +65,24 @@ public class workDone_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_work_done, container, false);
+        FragmentAddTabBinding binding = DataBindingUtil
+                .inflate(inflater, R.layout.fragment_add_tab,container,false);
+        View v = binding.getRoot();
+
+        binding.setLayoutinfo(MainActivity.info);
+        binding.setLifecycleOwner(this);
+        return v;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Toast.makeText(getContext(), "START", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Toast.makeText(getContext(), "RESUME", Toast.LENGTH_SHORT).show();
     }
 }

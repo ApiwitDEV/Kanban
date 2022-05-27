@@ -79,6 +79,7 @@ public class Home_Fragment extends Fragment {
         tabName.add("งานที่ยังไม่เสร็จ");
         tabName.add("งานที่เสร็จแล้ว");
         tabName.add("+เพิ่มแท็บ");
+        NTab = tabName.size();
         new TabLayoutMediator(tabLayout,viewPager2,
                 (tab, position) -> tab.setText(tabName.get(position)))
                 .attach();

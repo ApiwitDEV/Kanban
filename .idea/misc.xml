@@ -9,13 +9,17 @@
         <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/drawable/top_bar.xml" value="0.33" />
         <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/drawable/topbar.xml" value="0.2985" />
         <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/fragment_add_tab.xml" value="0.37158469945355194" />
+        <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/fragment_add_tab.xml" value="0.3383084577114428" />
         <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/fragment_blank.xml" value="0.358695652173913" />
         <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/fragment_project.xml" value="0.3175213675213675" />
         <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/fragment_statistic.xml" value="0.358695652173913" />
         <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/fragment_sub_home.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/fragment_unfinished__work.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/fragment_work_done.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/project_item.xml" value="0.3175213675213675" />
+        <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/task_list.xml" value="0.3175213675213675" />
+        <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/layout/task_work.xml" value="0.3175213675213675" />
         <entry key="..\:/Users/BAS-PC/Desktop/Kanban/app/src/main/res/menu/bottom_navigation.xml" value="0.38697916666666665" />
       </map>
     </option>

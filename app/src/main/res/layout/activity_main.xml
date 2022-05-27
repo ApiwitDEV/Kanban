@@ -28,6 +28,7 @@
         app:elevation="10dp"
         app:itemIconSize="35dp"
         app:itemIconTint="@color/theme_color"
+        app:itemRippleColor="@android:color/transparent"
         app:itemTextColor="@color/theme_color"
         app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
