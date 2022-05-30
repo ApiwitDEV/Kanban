@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.kanban.Model.ProjectItem;
+import com.example.kanban.model.ProjectItem;
 import com.example.kanban.adapter.ProjectListAdapter;
 import com.example.kanban.databinding.FragmentProjectBinding;
 
@@ -32,12 +32,18 @@ public class Project_Fragment extends Fragment {
         FragmentProjectBinding binding = FragmentProjectBinding.inflate(inflater,container,false);
         View v = binding.getRoot();
         ProjectItem item1 = new ProjectItem("KanBan Project","14:25 02/06/2022");
+        ProjectItem item2 = new ProjectItem("XXX Project","14:25 02/06/2022");
         ArrayList<ProjectItem> itemList = new ArrayList<>();
         itemList.add(item1);
+        itemList.add(item2);
+        itemList.add(item1);
+        itemList.add(item2);
         ProjectListAdapter projectListAdapter = new ProjectListAdapter(itemList);
         binding.project.setAdapter(projectListAdapter);
         binding.project.setLayoutManager(new LinearLayoutManager(getContext()));
-        if (position == 1) Toast.makeText(getContext(), "position one", Toast.LENGTH_SHORT).show();
+        if (position == 1) {
+            Toast.makeText(getContext(), "position one", Toast.LENGTH_SHORT).show();
+        }
         return v;
     }
 }
