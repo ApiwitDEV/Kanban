@@ -7,19 +7,21 @@ import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.kanban.BR;
 import com.example.kanban.model.ProjectItem;
 import com.example.kanban.R;
 import com.example.kanban.databinding.ProjectItemBinding;
+import com.example.kanban.viewModel.LayoutInfo;
 
 import java.util.ArrayList;
 
 public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.ProjectListViewHolder> {
 
     ArrayList<ProjectItem> itemList;
+    LayoutInfo layoutInfo;
 
-    public ProjectListAdapter(ArrayList<ProjectItem> item) {
+    public ProjectListAdapter(ArrayList<ProjectItem> item,LayoutInfo layoutInfo) {
         this.itemList = item;
+        this.layoutInfo = layoutInfo;
     }
 
     @NonNull
@@ -36,9 +38,13 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
         //holder.cardView.getLayoutParams().height =;
         //holder.cardView.getLayoutParams().width =;
         ProjectItem item = itemList.get(position);
+        if (position == 0) {
+            item.firstPosition = true;
+        }
         //holder.projectTitle.setText(itemList.get(position).projectTitle);
         //holder.deadLine.setText(itemList.get(position).deadLine);
         //holder.bind(item);
+        holder.binding.setLayoutInfo(layoutInfo);
         holder.binding.setProjectItem(item);
         holder.binding.executePendingBindings();
     }

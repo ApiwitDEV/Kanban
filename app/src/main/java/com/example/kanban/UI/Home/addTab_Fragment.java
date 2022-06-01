@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.example.kanban.R;
 import com.example.kanban.UI.MainActivity;
 import com.example.kanban.databinding.FragmentAddTabBinding;
+import com.example.kanban.viewModel.LayoutInfo;
 
 /**
  * A simple {@link Fragment} subclass.

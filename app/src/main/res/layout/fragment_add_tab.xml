@@ -20,12 +20,13 @@
         <androidx.cardview.widget.CardView
             DimentionH="@{layoutinfo.heightPx}"
             DimentionW="@{layoutinfo.widthPx}"
+            DimentionType="@{1}"
             android:layout_width="350dp"
             android:layout_height="200dp"
             app:cardCornerRadius="20dp"
             android:layout_marginTop="36dp"
             android:layout_marginBottom="10dp"
-            app:cardElevation="10dp"
+            app:cardElevation="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
