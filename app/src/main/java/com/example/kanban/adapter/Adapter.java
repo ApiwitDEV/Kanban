@@ -11,11 +11,11 @@ public class Adapter {
     public static void setDimention(View view,int w,int h,int type) {
 
         if (type == 1) {
-            view.getLayoutParams().width = (int)(w*0.46);
+            view.getLayoutParams().width = (int)(w*0.5*0.92);
             view.getLayoutParams().height = (int)(w*0.46*0.5);
         }
         else {
-            view.getLayoutParams().width = (int)(w*0.46);
+            view.getLayoutParams().width = (int)(w*0.5*0.92);
             view.getLayoutParams().height = (int)(w*0.46*0.45);
         }
 
@@ -26,7 +26,6 @@ public class Adapter {
 
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         if ( firstPosition ) {
-
             params.setMargins(0,100,0,20);
         }
         else {

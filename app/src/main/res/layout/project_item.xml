@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View" />
+        <variable
+            name="ProjectState"
+            type="com.example.kanban.viewModel.ProjectItemViewModel" />
         <variable
             name="ProjectItem"
             type="com.example.kanban.model.ProjectItem" />
@@ -66,6 +70,7 @@
 
                 <ImageView
                     android:id="@+id/imageView2"
+                    setState="@{ProjectState.Ntab - ProjectState.statePosition}"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="8dp"
@@ -78,6 +83,7 @@
 
                 <ImageView
                     android:id="@+id/imageView3"
+                    setState="@{ProjectState.statePosition}"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginStart="8dp"

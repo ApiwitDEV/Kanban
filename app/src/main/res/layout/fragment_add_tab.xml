@@ -11,7 +11,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/theme_color"
         tools:context=".UI.Home.addTab_Fragment"
@@ -19,13 +19,13 @@
 
         <androidx.cardview.widget.CardView
             DimentionH="@{layoutinfo.heightPx}"
-            DimentionW="@{layoutinfo.widthPx}"
             DimentionType="@{1}"
+            DimentionW="@{layoutinfo.widthPx}"
             android:layout_width="350dp"
             android:layout_height="200dp"
-            app:cardCornerRadius="20dp"
             android:layout_marginTop="36dp"
             android:layout_marginBottom="10dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,16 +36,15 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/theme_color"
                 android:orientation="vertical"
-                android:padding="10dp"
-                >
+                android:padding="10dp">
 
                 <TextView
-                    android:layout_weight="1"
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:text="@{layoutinfo.title}"
                     android:textColor="@color/black"
                     android:textSize="24sp" />
@@ -55,11 +54,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:hint="ใส่ชื่อแท็บ"
                     android:layout_weight="1"
+                    android:hint="ใส่ชื่อแท็บ"
+                    android:minHeight="48dp"
                     android:text="@={layoutinfo.name}"
-                    android:visibility="@{layoutinfo.visible ? View.VISIBLE : View.GONE}"
-                    android:minHeight="48dp" />
+                    android:visibility="@{layoutinfo.visible ? View.VISIBLE : View.GONE}" />
 
                 <Button
                     android:layout_width="match_parent"

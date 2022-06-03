@@ -2,6 +2,8 @@ package com.example.kanban.adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -11,17 +13,18 @@ import com.example.kanban.model.ProjectItem;
 import com.example.kanban.R;
 import com.example.kanban.databinding.ProjectItemBinding;
 import com.example.kanban.viewModel.LayoutInfo;
-
-import java.util.ArrayList;
+import com.example.kanban.viewModel.ProjectItemViewModel;
 
 public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.ProjectListViewHolder> {
 
-    ArrayList<ProjectItem> itemList;
+    int statePosition;
     LayoutInfo layoutInfo;
+    ProjectItemViewModel projectItemViewModel;
 
-    public ProjectListAdapter(ArrayList<ProjectItem> item,LayoutInfo layoutInfo) {
-        this.itemList = item;
+    public ProjectListAdapter(int statePosition,LayoutInfo layoutInfo, ProjectItemViewModel projectListViewHolder) {
         this.layoutInfo = layoutInfo;
+        this.projectItemViewModel = projectListViewHolder;
+        this.statePosition = statePosition;
     }
 
     @NonNull
@@ -35,23 +38,22 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ProjectListViewHolder holder, int position) {
-        //holder.cardView.getLayoutParams().height =;
-        //holder.cardView.getLayoutParams().width =;
-        ProjectItem item = itemList.get(position);
+
+        Animation animation = AnimationUtils.loadAnimation(holder.binding.getRoot().getContext(), android.R.anim.slide_in_left);
+        ProjectItem item = projectItemViewModel.projectList.get(position);
         if (position == 0) {
             item.firstPosition = true;
         }
-        //holder.projectTitle.setText(itemList.get(position).projectTitle);
-        //holder.deadLine.setText(itemList.get(position).deadLine);
-        //holder.bind(item);
         holder.binding.setLayoutInfo(layoutInfo);
+        holder.binding.setProjectState(projectItemViewModel);
         holder.binding.setProjectItem(item);
+        holder.binding.getRoot().setAnimation(animation);
         holder.binding.executePendingBindings();
     }
 
     @Override
     public int getItemCount() {
-        return itemList.size();
+        return projectItemViewModel.projectList.size();
     }
 
     public static class ProjectListViewHolder extends RecyclerView.ViewHolder {
@@ -61,7 +63,6 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
         public ProjectListViewHolder(ProjectItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
-
         }
         /*
         public void bind(Object obj) {
